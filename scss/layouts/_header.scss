@@ -1,0 +1,122 @@
+header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+
+    .massiveNavbar {
+        height: 100px;
+        background-color: transparent;
+        padding: 0 $pd-1;
+        transition: .5s;
+
+        .navbar-toggler {
+            i {
+                font-size: $fs-3 - 1;
+                color: $color-white-0;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .navbar-brand {
+            img {
+                height: 96px;
+                transition: .5s;
+            }
+        }
+
+        .navbar-collapse {
+            flex-grow: 0;
+
+            .nav-link {
+                padding: 0 $pd-0;
+                border: none;
+                display: block;
+                @include styleText($color-white-0, $fs-0 - 2, $fw-0);
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                line-height: $lh-1;
+
+                &.active,
+                &:hover,
+                &:focus {
+                    color: $color-yellow-0;
+                }
+
+                span {
+                    margin-left: $mg-0;
+                }
+            }
+
+            .nav-divider {
+                padding: 0 $pd-0;
+                color: $color-white-0;
+            }
+        }
+
+        &.nav--resize {
+            height: 60px;
+            background-color: $color-black-1;
+
+            .navbar-brand {
+                height: 100%;
+
+                img {
+                    height: 62px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1010px) {
+        .massiveNavbar {
+            .navbar-brand {
+                img {
+                    height: 46px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .my-d-app {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width:790px) {
+        .massiveNavbar {
+            .navbar-collapse {
+                .nav-link {
+                    padding: 0 $pd-0 - 2;
+                }
+            }
+        }
+    }
+
+    @include responsiveDesktopFirst("medium") {
+        .massiveNavbar {
+            .navbar-collapse {
+                background-color: $color-white-0;
+
+                .nav-link {
+                    display: flex;
+                    justify-content: space-between;
+                    border-top: 1px solid $color-white-3;
+                    color: $color-black-5;
+                }
+
+                .nav-divider {
+                    display: none;
+                }
+
+            }
+        }
+
+        .my-d-app {
+            display: inline-block !important;
+        }
+    }
+}

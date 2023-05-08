@@ -1,0 +1,39 @@
+.section-info {
+    text-align: center;
+    margin-bottom: $mg-1;
+
+    h2 {
+        position: relative;
+        text-transform: uppercase;
+        padding-bottom: $pd-0 - 2;
+        margin-bottom: $mg-2;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 60px;
+            height: 2px;
+            background-color: $color-black-2;
+            margin-left: -31px;
+        }
+    }
+
+    p {
+        width: 80%;
+        margin: auto;
+        line-height: $lh-1 - 4;
+        color: $color-black-3;
+    }
+
+    @include responsiveMobileFirst("medium") {
+        h2 {
+            font-size: $fs-3;
+        }
+
+        p {
+            width: 60%;
+        }
+    }
+}

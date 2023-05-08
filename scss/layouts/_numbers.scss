@@ -1,0 +1,38 @@
+.numbers {
+    background-color: $color-dark-1;
+
+    &.section-padding {
+        padding: $pd-2 0;
+    }
+
+    .numbers__item {
+        text-align: center;
+        color: $color-white-0;
+        padding: 0;
+
+        i {
+            font-size: $fs-4;
+            margin-right: $mg-5;
+        }
+
+        p {
+            display: inline-block;
+            font-size: $fs-4;
+            font-weight: $fw-0;
+            letter-spacing: $let-sp-1 + 1;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            letter-spacing: $let-sp-1;
+            @include styleText($color-white-0, $fs-0, $fw-0);
+            margin-top: $mg-5;
+        }
+    }
+
+    @include responsiveDesktopFirst("large") {
+        .numbers__item {
+            padding: $pd-1 0;
+        }
+    }
+}

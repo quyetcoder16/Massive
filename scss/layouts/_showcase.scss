@@ -1,0 +1,176 @@
+.showcase {
+
+    .showcase__item {
+        width: 24.98%;
+    }
+
+    &.section-padding {
+        padding-bottom: 0;
+    }
+
+    .section-info {
+        margin-bottom: $mg-6;
+    }
+
+    .showcase__filter {
+        text-align: center;
+
+        .filter-nav {
+            display: block;
+
+            .nav-item {
+                display: inline-block;
+                line-height: $lh-4;
+
+                .nav-link {
+                    @include styleText2($color-gray-3, $fs-0 - 1);
+                    text-transform: uppercase;
+                    letter-spacing: $let-sp - 2;
+                    padding: 0;
+                    margin: 0 $mg-5 + 5;
+                    cursor: pointer;
+
+                    &.active,
+                    &:hover {
+                        color: $color-black-4;
+                    }
+                }
+            }
+        }
+    }
+
+    .showcase__content {
+        position: relative;
+        height: 596.224px;
+        margin-top: $mg-1;
+
+        .showcase__item {
+            padding: 0;
+
+            &:first-child {
+                @include showcasePosition(0, 0);
+            }
+
+            &:nth-child(2) {
+                @include showcasePosition(0, 242px);
+            }
+
+            &:nth-child(3) {
+                @include showcasePosition(181px, 0);
+            }
+
+            &:nth-child(4) {
+                @include showcasePosition(181px, 242px);
+            }
+
+            &:nth-child(5) {
+                @include showcasePosition(363px, 0);
+            }
+
+            &:nth-child(6) {
+                @include showcasePosition(363px, 242px);
+            }
+
+            &:nth-child(7) {
+                @include showcasePosition(545px, 0);
+            }
+
+            &:nth-child(8) {
+                @include showcasePosition(545px, 242px);
+            }
+
+            &:hover {
+                .showcase__info {
+                    opacity: 1;
+
+                    .showcase__btn {
+                        top: 40%;
+                        margin-top: -55px;
+                        opacity: 1;
+                    }
+
+                    .showcase__des {
+                        bottom: 45%;
+                        margin-bottom: -90px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .showcase__photo {
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+
+            .showcase__info {
+                text-transform: uppercase;
+                @extend %hover-img;
+
+                .showcase__btn {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    font-size: $fs-2 + 5;
+                    text-align: center;
+                    transform: translateY(45%);
+                    opacity: 0;
+                    transition: all 0.3s;
+                }
+
+                .showcase__des {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    transform: translateY(-55%);
+                    opacity: 0;
+                    transition: all 0.3s;
+
+                    h4 {
+                        letter-spacing: 4px;
+                        font-size: $fs-0 - 1;
+                        font-weight: $fw-0;
+                        line-height: $lh-0;
+                        margin-bottom: $mg-0 + 2;
+                    }
+
+                    p {
+                        letter-spacing: 3px;
+                        line-height: $lh-1 + 1;
+                        text-transform: uppercase;
+                        @include styleText2($color-gray-4, $fs-0 - 3);
+                        font-weight: 300;
+                    }
+                }
+
+                a {
+                    color: $color-black-4;
+
+                    &:hover {
+                        color: $color-yellow-0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:992px) {
+        .showcase__item {
+            width: 33.333333%;
+        }
+    }
+
+    @media screen and (max-width:800px) {
+        .showcase__item {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width:449px) {
+        .showcase__item {
+            width: 100%;
+        }
+    }
+}

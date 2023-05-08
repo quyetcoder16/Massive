@@ -1,0 +1,37 @@
+.banner {
+    height: 100vh;
+    background-image: url("../img/banner.jpeg");
+    @extend %background-img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner__content {
+        text-align: center;
+        text-transform: uppercase;
+
+        h1 {
+            @include styleText($color-white-0, $fs-1, $fw-1);
+            letter-spacing: $let-sp;
+            line-height: normal;
+        }
+
+        h2 {
+            @include styleText($color-white-0, $fs-0 + 5, $fw-0);
+            letter-spacing: $let-sp + 1;
+
+        }
+    }
+
+    @include responsiveDesktopFirst("medium") {
+        .banner__content {
+            h1 {
+                font-size: $fs-2;
+            }
+
+            h2 {
+                font-size: $fs-0 + 3;
+            }
+        }
+    }
+}

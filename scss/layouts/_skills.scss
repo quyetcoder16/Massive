@@ -1,0 +1,69 @@
+.skills {
+    background-image: url('../img/skills.jpeg');
+    @extend %background-img;
+
+    .skills__overlay {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, transparent 0%, transparent 50%, $color-black-6 0%, $color-black-6 50%);
+    }
+
+    .skills__title {
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: $pd-1;
+        z-index: 10;
+
+        h2 {
+            letter-spacing: $let-sp + 1;
+            color: $color-white-0;
+        }
+    }
+
+    .skills__des {
+        padding: 0 $pd-1;
+
+        h3 {
+            color: $color-white-0;
+            margin-bottom: $mg-4;
+        }
+
+        &>p {
+            color: $color-white-0;
+            line-height: $lh-1 + 1;
+            margin-bottom: $mg-4;
+        }
+
+        .skills__progress {
+            padding-top: $pd-1;
+
+            .progressBar {
+                &:first-child.active {
+                    .progressBar__run {
+                        width: 80%;
+                    }
+                }
+
+                &:nth-child(2).active {
+                    .progressBar__run {
+                        width: 90%;
+                    }
+                }
+
+                &:nth-child(3).active {
+                    .progressBar__run {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsiveDesktopFirst("large") {
+        .skills__overlay {
+            background: none;
+        }
+    }
+}

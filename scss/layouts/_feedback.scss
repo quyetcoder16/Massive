@@ -1,0 +1,52 @@
+.feedback {
+    text-align: center;
+    border-bottom: 1px solid $color-gray-9;
+
+    .feedback__content {
+        width: 66.667%;
+        margin: auto;
+        padding: 0 $pd-1;
+
+        .feedback__item {
+            text-align: center;
+
+            .feedback__thumb {
+                display: inline-block;
+                width: 100px;
+                margin-bottom: $mg-2;
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+
+            .feedback__comment {
+                @include styleText2($color-black-3, $fs-0 + 1);
+                font-style: italic;
+                line-height: $lh-1 + 1;
+                margin-bottom: $mg-4;
+            }
+
+            .feedback__user {
+                text-transform: uppercase;
+                letter-spacing: $let-sp-1 + 1;
+                margin-top: $mg-5;
+
+                p:first-child {
+                    @include styleText2($color-black-4, $fs-0 - 1);
+                }
+
+                p:last-child {
+                    @include styleText2($color-black-9, $fs-0 - 3);
+                }
+
+            }
+        }
+    }
+
+    @media screen and (max-width:1215px) {
+        .feedback__content {
+            width: 100%;
+        }
+    }
+}

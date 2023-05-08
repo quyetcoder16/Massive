@@ -1,0 +1,37 @@
+.cover {
+    background-image: url('../img/cover.jpeg');
+    @extend %background-img;
+
+    &.section-padding {
+        padding: $pd-5 0;
+    }
+
+    .cover__text {
+        span {
+            @include styleText2($color-yellow-0, $fs-0 + 1);
+            letter-spacing: $let-sp - 2;
+        }
+
+        h1 {
+            @include styleText($color-white-0, $fs-4, $fw-0);
+            letter-spacing: $let-sp-1 + 1;
+            line-height: $lh-0;
+        }
+    }
+
+    .cover__btn {
+        margin-top: $mg-1;
+
+        button {
+            margin-bottom: $mg-0 + 2;
+        }
+    }
+
+    @include responsiveDesktopFirst("medium") {
+        .cover__text {
+            h1 {
+                font-size: $fs-3 + 2;
+            }
+        }
+    }
+}

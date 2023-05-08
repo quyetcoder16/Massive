@@ -1,0 +1,28 @@
+@import './helper/variables';
+@import './helper/minxin';
+@import './helper/extends';
+
+@import './base/reset';
+@import './base/customize';
+
+@import './components/section-info';
+@import './components/progressBar';
+@import './components/button';
+
+// layouts 
+
+@import './layouts/header';
+@import './layouts/banner';
+@import './layouts/design';
+@import './layouts/skills';
+@import './layouts/showcase';
+@import './layouts/team';
+@import './layouts/cover';
+@import './layouts/blog';
+@import './layouts/intro';
+@import './layouts/numbers';
+@import './layouts/feedback';
+@import './layouts/partners';
+@import './layouts/footer';
+@import './layouts/copyright';
+@import './layouts/backToTop';

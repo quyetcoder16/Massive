@@ -1,0 +1,151 @@
+.team {
+    .section-info {
+        margin-bottom: $mg-6;
+    }
+
+    .team__item {
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            .team__info {
+                opacity: 1;
+
+                .team__text {
+                    top: 35%;
+                    opacity: 1;
+                }
+
+                .team__social {
+                    bottom: 10%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .team__photo {
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+
+            .team__name {
+                position: absolute;
+                right: 0;
+                bottom: 33px;
+                width: 70%;
+                background-color: $color-black-7;
+                text-align: right;
+                text-transform: uppercase;
+                padding: $pd-0 - 2 $pd-3;
+
+                h3 {
+                    @include styleText($color-white-0, $fs-0 - 1, $fw-1);
+                    margin-bottom: $mg-0 - 1;
+                }
+
+                p {
+                    @include styleText2($color-white-2, $fs-0 - 3);
+                    letter-spacing: $let-sp-1 + 1;
+                }
+            }
+        }
+
+        .team__info {
+            @extend %hover-img;
+
+            .team__text {
+                position: absolute;
+                top: 0;
+                transform: translateY(-55%);
+                padding: 0 $pd-3;
+                opacity: 0;
+                transition: all 0.3s;
+
+                h3 {
+                    text-transform: uppercase;
+                    letter-spacing: $let-sp - 1;
+                    @include styleText2($color-black-4, $fs-0 - 1);
+                    margin-bottom: $mg-2 + 5;
+                }
+
+                p {
+                    @include styleText2($color-black-3, $fs-0 - 1);
+                    line-height: $lh-1 + 1;
+                }
+            }
+
+            .team__social {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                font-size: $fs-2 + 5;
+                text-align: center;
+                transform: translateY(45%);
+                opacity: 0;
+                transition: all 0.3s;
+
+                a {
+                    @include styleText2($color-black-4, $fs-0 + 1);
+                    margin: 0 $mg-5;
+
+                    &:hover {
+                        color: $color-yellow-0;
+                    }
+                }
+            }
+        }
+    }
+
+    .team__promo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-gray-5;
+        padding: $pd-4;
+        margin-top: $mg-7;
+
+        .team__promo-info {
+            h3 {
+                text-transform: uppercase;
+                letter-spacing: $let-sp-1 + 1;
+
+                span {
+                    color: $color-yellow-0;
+                }
+            }
+
+            p {
+                color: $color-black-3;
+                margin-top: $mg-5;
+            }
+        }
+
+        .team__promo-btn {
+            margin-top: 0;
+
+            button {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include responsiveDesktopFirst("medium") {
+        .team__item {
+            width: 90%;
+            margin: auto;
+            margin-bottom: $mg-5;
+        }
+
+        .team__promo {
+            .team__promo-info {
+                width: 100%;
+            }
+
+            .team__promo-btn {
+                margin-top: $mg-2;
+            }
+        }
+    }
+}
